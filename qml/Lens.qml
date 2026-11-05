@@ -13,12 +13,17 @@ ShaderEffect {
  property real zoom: 1.025
  property real magnification: zoom
  property var source: backgroundTexture
- property size viewport: Qt.size(scene.width,scene.height)
+ property size viewport: Qt.size(Math.max(1,scene.width),Math.max(1,scene.height))
  property vector4d surface: {
   var revision=scene.geometryRevision;
-  var xx=x; var yy=y; var ss=scale;
+  var xx=x; var yy=y; var ss=scale; var origin=transformOrigin;
   var node=parent;
-  while(node && node!==scene) {var px=node.x;var py=node.y;var ps=node.scale;node=node.parent;}
+  // Subscribe to geometry used by mapToItem, including the parent's scale origin.
+  while(node && node!==scene) {
+   var px=node.x, py=node.y, ps=node.scale;
+   var pw=node.width, ph=node.height, po=node.transformOrigin;
+   node=node.parent;
+  }
   var p=mapToItem(scene,0,0);
   var end=mapToItem(scene,width,height);
   return Qt.vector4d(p.x,p.y,end.x-p.x,end.y-p.y);
@@ -31,7 +36,7 @@ ShaderEffect {
  property real hover: over
  property real down: pushed
  property real dark: scene.whiteInk ? 1 : 0
- property point pointer: Qt.point(scene.mouseX/scene.width*2-1,scene.mouseY/scene.height*2-1)
+ property point pointer: Qt.point(scene.mouseX/Math.max(1,scene.width)*2-1,scene.mouseY/Math.max(1,scene.height)*2-1)
  fragmentShader: "lens.frag.qsb"
  onStatusChanged: if(status===ShaderEffect.Error) scene.shaderError=log
  Behavior on over { NumberAnimation {duration:140} }

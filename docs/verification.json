@@ -1,0 +1,31 @@
+{
+  "time_utc": "2026-11-05T02:11:27.613070+00:00",
+  "system": "Windows-10-10.0.26300-SP0",
+  "python": "3.11.9",
+  "pyqt": "6.11.0",
+  "qt": "6.11.0",
+  "qt_build": "6.11.0",
+  "backend": "Direct3D11Rhi",
+  "dpr": 1.5,
+  "checks": [
+    "button_mouse_and_disabled",
+    "tab_cycle_backtab_button_keyboard",
+    "switch_mouse_keyboard_and_disabled",
+    "slider_mouse_keyboard_disabled_and_progress_binding",
+    "shared_font_and_accent_configuration",
+    "four_theme_background_combinations_rendered_for_visual_review",
+    "window_resize",
+    "effects_off_background_unavailable_and_error_fallback",
+    "pixel_alignment_initial",
+    "pixel_alignment_parent_translation",
+    "pixel_alignment_parent_scale",
+    "pixel_alignment_scale_origin_after_parent_resize",
+    "pixel_alignment_top_left_scale_origin",
+    "parent_rectangular_clip_inside_outside_pixels",
+    "zero_size_fallback_and_recovery",
+    "no_qt_warnings_or_shader_errors"
+  ],
+  "errors": [],
+  "passed": true,
+  "qt_messages": []
+}

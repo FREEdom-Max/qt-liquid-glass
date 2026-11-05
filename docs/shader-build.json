@@ -1,0 +1,26 @@
+{
+  "tool": "qsb 6.11.0",
+  "flags": [
+    "--glsl",
+    "100 es,120,150",
+    "--hlsl",
+    "50",
+    "--msl",
+    "12"
+  ],
+  "source_hash_normalization": "LF",
+  "files": {
+    "qml/lens.frag": {
+      "source_sha256": "5daba89eb3f193d1d6f833ced04863d668f227ba5c9e6db206e96817cfeed0f2",
+      "qsb_sha256": "ac4484bfe9f8fbb6f35ccc603844e4ae6eb0331b8ecb0bbb7111bad5ef9dab53"
+    },
+    "examples/glass_lab/content_lens.frag": {
+      "source_sha256": "2979056b7ccbdb68d8590f1f6544768ac5d21556e126e975aa3cfa54de3debb4",
+      "qsb_sha256": "f1f4e9b2ba4d7e013ff096b258d411099b2a7d70e262a4a3e1801a8df3361b02"
+    },
+    "examples/glass_lab/lens.frag": {
+      "source_sha256": "264268cb545ae799f307a0e2fc00eb4c27edb6e8c8336599b20c3b43df25cb6a",
+      "qsb_sha256": "ac4484bfe9f8fbb6f35ccc603844e4ae6eb0331b8ecb0bbb7111bad5ef9dab53"
+    }
+  }
+}

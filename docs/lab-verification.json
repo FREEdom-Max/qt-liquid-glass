@@ -1,0 +1,16 @@
+{
+  "graphics_api": "GraphicsApi.Direct3D11Rhi",
+  "dpr": 1.5,
+  "refraction_pixels_differ": true,
+  "dispersion_pixels_differ": true,
+  "button_slider_deform_and_switch_easing": true,
+  "press_immediate_move_and_magnify": true,
+  "lifted_capsule_clear_with_strong_refraction": true,
+  "color_mask_changed_samples": 272,
+  "color_mask_outside_samples": 0,
+  "drag_follow_snap_keyboard": true,
+  "readability_schemes_captured": true,
+  "button_slider_switch_segments": true,
+  "qml_errors": [],
+  "shader_error": ""
+}

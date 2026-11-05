@@ -5,10 +5,11 @@ C.Button {
     required property var theme
     implicitWidth:Math.max(104,contentItem.implicitWidth+32)
     implicitHeight:42
-    font.family:"Microsoft YaHei UI"
-    font.pixelSize:14
+    font.family:theme.fontFamily
+    font.pixelSize:theme.fontSize
     font.weight:Font.Bold
     hoverEnabled:true
+    focusPolicy: Qt.StrongFocus
     padding:12
 
     // The hit target/layout stays fixed while the lens lifts beyond its bounds.
@@ -31,7 +32,7 @@ C.Button {
             y:(parent.height-height)/2
             corner:height/2
             // Match the raised sidebar capsule: clear center, strong lens edge.
-            veil:(control.theme.whiteInk?.06:.34)*(1-control.pressFeedback)
+            veil:control.theme.surfaceVeil
             blur:.35*(1-control.pressFeedback)
             refraction:19+15*control.pressFeedback
             zoom:1.025+.155*control.pressFeedback
@@ -53,7 +54,7 @@ C.Button {
             anchors.margins:-3
             radius:height/2
             color:"transparent"
-            border.color:"#d8752e"
+            border.color:control.theme.accent
             border.width:2
             visible:control.visualFocus
         }
@@ -62,7 +63,7 @@ C.Button {
     contentItem:Text {
         text:control.text
         font:control.font
-        color:control.down?(control.theme.whiteInk?"#ffc18f":"#ad4817"):control.theme.ink
+        color:control.down?control.theme.pressedInk:control.theme.ink
         scale:1+.045*control.pressFeedback
         horizontalAlignment:Text.AlignHCenter
         verticalAlignment:Text.AlignVCenter
